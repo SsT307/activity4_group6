@@ -1,6 +1,6 @@
 '''
-Activity 3, Group 6
-Students: Shaikha Alhajri, Fatma Alsuwaidi, Fatma Almadani, Iliazya Alattar, Noha Abou Karnib
+Activity 4, Group 6
+Students: Shaikha Alhajri, Fatma Almadani, Fatma Alsuwaidi, Iliazya Alattar, Noha Abou Karnib
 This activity is to help guide us on how TDD can help when creating a class to ensure all the values are outputed as expected!
 '''
 class Polygon:
