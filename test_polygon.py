@@ -1,12 +1,5 @@
 from polygon import Polygon
 
-'''
-Test for negative
-Zeroes
-test setters
-
-'''
-
 ''' 
 *           *           *           *           *           *
 Activity 4: In this assignment we are combining our knowledge from the previous lesson of test
@@ -51,6 +44,11 @@ def test_set_sides():
 # --------------------------------------------------------------------------------------- #
 
 ''' *           *           *     STEP 2      *           *           * '''
+'''
+In this step we are looking to test the equality functions, we would like to check that the __eq__ construtor will return True
+incase both objects are equal, and False if they arent, while the __ne__ function will do the opposite. Kinda confusing, but I
+promise its as easy as '==' and '!=', complete opposites.
+'''
 def test_polygon_equality():
     ''' Test that the __eq__ method work correctly '''
     polygon1 = Polygon("Triangle", [3, 3, 3])
@@ -67,12 +65,41 @@ def test_polygon_inequality():
 # --------------------------------------------------------------------------------------- #
 
 ''' *           *           *     STEP 3      *           *           * '''
+'''
+In this step, we are just testing if the string representation of the polygon made previously fits what we want,
+as we want it to output "(the name of the polygon) with sides: (the list of sides)" !
+'''
 def test_polygon_str():
     ''' Test that the __str__ method returns a string representation of the polygon '''
     polygon = Polygon("Triangle", [3, 3, 3])  
     assert str(polygon) == "Triangle with sides: [3, 3, 3]"
 
+
+# --------------------------------------------------------------------------------------- #
+
+''' *           *           *     STEP 4      *           *           * '''
+'''
+In step 4, we are looking to see if the constructor adds up all the sides and returns the sum. Thats literally all it is.
+'''
 def test_calculate_circumference():
     ''' Test that the calculate_circumference method returns the sum of all sides of the polygon '''
     s1 = Polygon("Square", [4, 4, 4, 4])
     assert s1.calculate_circumference() == 16 # 4 + 4 + 4 + 4 = 16
+
+
+# --------------------------------------------------------------------------------------- #
+
+''' *           *           *     STEP 5      *           *           * '''
+'''
+In the final step, this tests a constructor made to defult the amount of sides, if there is a triangle, it has to have a list of sides
+that are [3, 3, 3]; if it is a square, it has to have a list of sides that are [4, 4, 4, 4]; and if it is a hexagon, it has to have
+a list of sides that are [6, 6, 6, 6, 6] !
+'''
+def test_instantiate_polygon():
+    ''' Test that the Polygon class can be instantiated with the correct arguments '''
+    triangle = Polygon("Triangle", [])
+    assert triangle.instantiate_polygon() == 'Triangle with sides: [3, 3, 3], 9'
+    square = Polygon("Square", [])
+    assert square.instantiate_polygon() == 'Square with sides: [4, 4, 4, 4], 16'
+    hexagon = Polygon("Hexagon", [])
+    assert hexagon.instantiate_polygon() == 'Hexagon with sides: [6, 6, 6, 6, 6, 6], 36'

@@ -33,3 +33,27 @@ class Polygon:
     def calculate_circumference(self):
         return sum(self.__sides)
     
+    ''' Defult sides for the triangle, square, and hexagon shapes '''
+    def instantiate_polygon(self):
+        if self.get_name().lower() == 'triangle':
+            self.set_sides([3,3,3])
+            return self.__str__(), self.calculate_circumference()
+        elif self.get_name().lower() == 'square':
+            self.set_sides([4,4,4,4])
+            return self.__str__(), self.calculate_circumference()
+        elif self.get_name().lower() == 'hexagon':
+            self.set_sides([6,6,6,6,6,6])
+            return self.__str__(), self.calculate_circumference()
+        
+# Executing the main function      
+if __name__ == '__main__':
+    p1 = Polygon('Triangle', [])
+    p2 = Polygon('Square', [])
+    p3 = Polygon('Hexagon', [])
+    print(p1.instantiate_polygon())
+    print(p2.instantiate_polygon())
+    print(p3.instantiate_polygon())
+    print(p1 == p2)  # False
+    print(p1 != p3)  # True
+    
+    
