@@ -1,0 +1,1 @@
+return str(self.__str__(), self.calculate_circumference())

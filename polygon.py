@@ -1,3 +1,8 @@
+'''
+Activity 3, Group 6
+Students: Shaikha Alhajri, Fatma Alsuwaidi, Fatma Almadani, Iliazya Alattar, Noha Abou Karnib
+This activity is to help guide us on how TDD can help when creating a class to ensure all the values are outputed as expected!
+'''
 class Polygon:
     __slots__ = ['__name','__sides'] # Makes sure that the Polygon class ONLY has these two members
     ''' Initilize with 2 private members, name and sides '''
@@ -37,13 +42,13 @@ class Polygon:
     def instantiate_polygon(self):
         if self.get_name().lower() == 'triangle':
             self.set_sides([3,3,3])
-            return self.__str__(), self.calculate_circumference()
+            return f'{self.__str__()}, {str(self.calculate_circumference())}'
         elif self.get_name().lower() == 'square':
             self.set_sides([4,4,4,4])
-            return self.__str__(), self.calculate_circumference()
+            return f'{self.__str__()}, {str(self.calculate_circumference())}'
         elif self.get_name().lower() == 'hexagon':
             self.set_sides([6,6,6,6,6,6])
-            return self.__str__(), self.calculate_circumference()
+            return f'{self.__str__()}, {str(self.calculate_circumference())}'
         
 # Executing the main function      
 if __name__ == '__main__':

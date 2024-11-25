@@ -22,12 +22,9 @@ postive numbers
 '''
 
 def test_polygon_initialization():
-    ''' Test that the polygon has sides and that it is not equal to zero '''
-    polygon1 = Polygon('Nonagon', [5,7,8])
-    assert sum(polygon1.get_sides()) != 0 # Will return True, because the total of the variables in the list does not equal to zero
-    # Test that the sides are positive numbers
-    polygon2 = Polygon('Shape', [1, 2, 3, 4, 5])
-    assert all(polygon2.get_sides() > 0 for polygon2.get_sides() in polygon2.sides) # Will return True, because the sum of the
+    ''' Test that the polygon has sides and that it is not equal to zero AND Test that none of the sides are negative numbers '''
+    polygon = Polygon("Hexagon", [3, 5, 6, 7, 8, 1])
+    assert all(side > 0 for side in polygon.get_sides()) and sum(side > 0 for side in polygon.get_sides()) # This should return True since all sides are non-negative, greater than 0, and because the list is not empty
 
 def test_get_sides():
     ''' Test that the get_sides() method returns the correct list of sides '''
@@ -103,3 +100,6 @@ def test_instantiate_polygon():
     assert square.instantiate_polygon() == 'Square with sides: [4, 4, 4, 4], 16'
     hexagon = Polygon("Hexagon", [])
     assert hexagon.instantiate_polygon() == 'Hexagon with sides: [6, 6, 6, 6, 6, 6], 36'
+    
+    
+# --------------------------------------------------------------------------------------- #
